@@ -895,7 +895,7 @@ trait Blonwe_Helper
     public function blonwe_get_posts() {
         $list = get_posts( array(
             'post_type'         => 'post',
-            'posts_per_page'    => -1,
+            'posts_per_page'    => 60,
         ) );
         $options = array();
         if ( ! empty( $list ) && ! is_wp_error( $list ) ) {
@@ -909,7 +909,7 @@ trait Blonwe_Helper
         if ( $cptname ) {
             $list = get_posts( array(
                 'post_type'         => $cptname,
-                'posts_per_page'    => -1,
+                'posts_per_page'    => 60,
             ) );
             $options = array();
             if ( ! empty( $list ) && ! is_wp_error( $list ) ) {
