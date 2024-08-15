@@ -99,7 +99,7 @@ trait Blonwe_Helper
                 'label' => esc_html__( 'Posts Per Page', 'blonwe-core' ),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 1,
-                'max' => count( get_posts( array('post_type' => 'product', 'post_status' => 'publish', 'fields' => 'ids', 'posts_per_page' => '-1') ) ),
+                'max' => count( get_posts( array('post_type' => 'product', 'post_status' => 'publish', 'fields' => 'ids', 'posts_per_page' => '100') ) ),
                 'default' => $post_count
             ]
         );
@@ -822,7 +822,7 @@ trait Blonwe_Helper
     {
         $args = [
             'post_type' => 'elementor_library',
-            'posts_per_page' => -1,
+            'posts_per_page' => 100,
         ];
         if ($type) {
             $args['tax_query'] = [
@@ -998,7 +998,7 @@ trait Blonwe_Helper
         if ( class_exists( 'WooCommerce' ) ) {
             $args = array(
                 'post_type' => 'product', 
-                'posts_per_page' => -1
+                'posts_per_page' => 100
             );
             
             $wcProductsArray = get_posts($args);
@@ -1018,7 +1018,7 @@ trait Blonwe_Helper
     public function blonwe_get_cf7() {
         $list = get_posts( array(
             'post_type'         => 'wpcf7_contact_form',
-            'posts_per_page'    => -1,
+            'posts_per_page'    => 100,
         ) );
         $options = array();
         if ( ! empty( $list ) && ! is_wp_error( $list ) ) {
