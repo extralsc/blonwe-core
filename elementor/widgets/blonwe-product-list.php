@@ -71,7 +71,7 @@ class Blonwe_Product_List_Widget extends Widget_Base {
                 'label' => esc_html__( 'Posts Per Page', 'blonwe-core' ),
                 'type' => Controls_Manager::NUMBER,
                 'min' => 1,
-                'max' => count( get_posts( array('post_type' => 'product', 'post_status' => 'publish', 'fields' => 'ids', 'posts_per_page' => '-1') ) ),
+                'max' => count( get_posts( array('post_type' => 'product', 'post_status' => 'publish', 'fields' => 'ids', 'posts_per_page' => '100') ) ),
                 'default' => 4
             ]
         );
